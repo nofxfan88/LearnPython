@@ -15,8 +15,6 @@ def madReplace(m):
 # Create Regex to match ADJECTIVE, VERB, NOUN, ADVERB
 madRegex = re.compile(r'ADJECTIVE|NOUN|VERB|ADVERB')
 
-print(madRegex.sub(madReplace, testString))
-
 #  Open input and output text files.
 directory = os.path.join('C:\\', 'Users', 'bribake2', 'Documents', 'Github',
     'LearnPython', 'AutomateBoringStuff', 'Ch8 stuff')
@@ -26,3 +24,7 @@ outputFile = open(os.path.join(directory, 'mad_lib_filled.txt'), 'w')
 # Go through input line, apply regex.sub(), write to output file
 
 for line in inputFile:
+    outputFile.write(madRegex.sub(madReplace, line))
+
+inputFile.close()
+outputFile.close()
